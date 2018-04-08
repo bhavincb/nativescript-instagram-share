@@ -1,40 +1,55 @@
-# Your Plugin Name
+# Nativescript Instagram Share(Currently for Android)
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+Instagram share plugin will allow you to directly share image to instagram app.
 
-Then describe what's the purpose of your plugin. 
+## Requirements
 
-In case you develop UI plugin, this is where you can add some screenshots.
-
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+working only for android
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
 
 ```javascript
-tns plugin add <your-plugin-name>
+tns plugin add nativescript-instagram-share
+```
+
+#### TypeScript support
+And do yourself a favor by adding TypeScript support to your nativeScript app:
+
+```bash
+tns install typescript
+```
+
+Now you can import the plugin as an object into your `.ts` file as follows:
+
+```typescript
+import { shareInstagram } from 'nativescript-instagram-share';
 ```
 
 ## Usage 
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
 	
-	```javascript
-    Usage code snippets here
-    ```)
+	```
+        import * as imageSource from "tns-core-modules/image-source";
+        let url=imageUrl; //image url if you want to share remote image
+        let imageSrc:imageSource.ImageSource;
+        getImage(url).then((r)=> {
+            //// Argument (r) is ImageSource!
+            console.log("Image download  complete")
+            imageSrc=r;
+        }, (e)=> {
+            //// Argument (e) is Error!
+        });
+        shareInstagram(r).then((r)=>{
+            console.log("instagram open succcessfully");
+        }).catch((e)=>{
+            console.log("instagram is not installed");
+        });
+    ```
 
-## API
+##  ToDo
+implement IOS version.
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
 ## License
 
 Apache License Version 2.0, January 2004
