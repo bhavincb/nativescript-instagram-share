@@ -40,7 +40,7 @@ import { shareInstagram } from 'nativescript-instagram-share';
         }, (e)=> {
             //// Argument (e) is Error!
         });
-        shareInstagram(r).then((r)=>{
+        shareInstagram(imageSrc).then((r)=>{
             console.log("instagram open succcessfully");
         }).catch((e)=>{
             console.log("instagram is not installed");
