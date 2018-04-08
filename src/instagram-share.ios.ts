@@ -1,5 +1,3 @@
-import { Common } from './instagram-share.common';
-
-export class InstagramShare extends Common {
-
+export function shareInstagram(){
+    //will use FSOpenInInstagram or MGInstagram or DMActivityInstagram in future
 }
