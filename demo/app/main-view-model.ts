@@ -3,15 +3,16 @@ import { shareInstagram } from 'nativescript-instagram-share';
 import { getFile,getImage} from "tns-core-modules/http";
 export class HelloWorldModel extends Observable {
   public message: string;
-
+  public imageUrl="http://www.daycomsolutions.com/Support/BatchImage/HPIM0050w300.JPG";
   constructor() {
     super();
-    let imageUrl="http://www.daycomsolutions.com/Support/BatchImage/HPIM0050w300.JPG";
-    setTimeout(()=>{
-      this.share(imageUrl);
-    },5000)
+    
+    // setTimeout(()=>{
+      this.share();
+    // },5000)
   }
-  share(url){
+  share(){
+    let url=this.imageUrl;
     console.log("getting file")
     getImage(url).then((r)=> {
         //// Argument (r) is File!

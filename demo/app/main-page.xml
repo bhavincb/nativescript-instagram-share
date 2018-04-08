@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
   xmlns:ui="nativescript-instagram-share">
   <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
+    <Label text="click to Insta share" tap="{{ share }}" class="t-20 text-center c-black" textWrap="true"/>
   </StackLayout>
 </Page>

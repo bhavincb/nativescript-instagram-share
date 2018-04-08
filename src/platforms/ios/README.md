@@ -1,9 +1,55 @@
-# iOS permissions and dependencies
+# Nativescript Instagram Share(Currently for Android)
+
+Instagram share plugin will allow you to directly share image to instagram app.
+
+## Requirements
+
+working only for android
+
+## Installation
 
 
-* (Optional) Use Info.plist to describe any permissions, features or other configuration specifics required or used by your plugin for iOS. 
-NOTE: The NativeScript CLI will not resolve any contradicting or duplicate entries during the merge. After the plugin is installed, you need to manually resolve such issues.
-* (Optional) Use build.xcconfig configuration to describe any plugin the native dependencies. If there are no such, this file can be removed. For more information, see the [build.xcconfig Specification section](http://docs.nativescript.org/plugins/plugins#buildxcconfig-specification).
+```javascript
+tns plugin add nativescript-instagram-share
+```
 
+#### TypeScript support
+And do yourself a favor by adding TypeScript support to your nativeScript app:
 
-[Read more about nativescript plugins](http://docs.nativescript.org/plugins/plugins)
+```bash
+tns install typescript
+```
+
+Now you can import the plugin as an object into your `.ts` file as follows:
+
+```typescript
+import { shareInstagram } from 'nativescript-instagram-share';
+```
+
+## Usage 
+
+	
+	```
+        import * as imageSource from "tns-core-modules/image-source";
+        let url=imageUrl; //image url if you want to share remote image
+        let imageSrc:imageSource.ImageSource;
+        getImage(url).then((r)=> {
+            //// Argument (r) is ImageSource!
+            console.log("Image download  complete")
+            imageSrc=r;
+        }, (e)=> {
+            //// Argument (e) is Error!
+        });
+        shareInstagram(r).then((r)=>{
+            console.log("instagram open succcessfully");
+        }).catch((e)=>{
+            console.log("instagram is not installed");
+        });
+    ```
+
+##  ToDo
+implement IOS version.
+
+## License
+
+Apache License Version 2.0, January 2004

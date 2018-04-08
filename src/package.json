@@ -1,7 +1,7 @@
 {
     "name": "nativescript-instagram-share",
     "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "description": "Instagram share plugin will allow you to directly share image to instagram app.",
     "main": "instagram-share",
     "typings": "index.d.ts",
     "nativescript": {
@@ -31,11 +31,13 @@
         "NativeScript",
         "JavaScript",
         "Android",
-        "iOS"
+        "iOS",
+        "Social Sharing",
+        "Instagram"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "bhavin jalodara",
+        "email": "bhavin.jalodara@gmail.com"
     },
     "bugs": {
         "url": "https://github.com/bhavincb/nativescript-instagram-share/issues"
